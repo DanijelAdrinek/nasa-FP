@@ -19,7 +19,7 @@ function validate() {
     if(validationComplete.type === 'valid') {
         loginUser(validationComplete.response);
     } else {
-        loginUser(validationComplete.response)
+        loginFailed(validationComplete.response)
     }
 }
 
@@ -114,5 +114,5 @@ function showErrorMessage(errorElement, text) {
 // for this example we will need only the role to work with
 function loginUser(username) {
     sessionStorage.setItem('role', username);
-    window.location.href = "http://127.0.0.1:5500/real%20programming/JS/projects%20to%20show%20off/FP/content.html";
+    window.location.href = "./content.html";
 }

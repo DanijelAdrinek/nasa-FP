@@ -12,11 +12,11 @@ let isFetchingData = false;
 (function() {
     if(!role) {
         alert('role wasnt found, you will be redirected back to login!');
-        window.location.href = "http://127.0.0.1:5500/real%20programming/JS/projects%20to%20show%20off/FP/index.html";
+        window.location.href = "./index.html";
     } else {
         if(role !== 'User' && role !== 'Admin') {
             alert('invalid role, you will be redirected back to login!');
-            window.location.href = "http://127.0.0.1:5500/real%20programming/JS/projects%20to%20show%20off/FP/index.html";
+            window.location.href = "./index.html";
         };
     };
 })();
