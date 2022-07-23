@@ -35,6 +35,7 @@ async function getDataAndDisplayIt() {
             data = [...data, ...validNewData];
         }
         await displayData(data);
+        hideLoadingScreen();
 
         isFetchingData = false;
     }
@@ -51,13 +52,18 @@ async function getServerData() {
         const responseData = await data.json();
         return responseData;
     } catch(err) {
-        console.log(err);
+        console.log('not able to fetch new data: ', err);
     }
     
 }
 
-function displayData(data) {
+function hideLoadingScreen() {
     const loadingScreen = document.getElementById('loadingContainerParent');
+
+    loadingScreen.style.display = "none";
+}
+
+function displayData(data) {
     let card;
 
     // removes all previous data
@@ -86,9 +92,6 @@ function displayData(data) {
 
     content.innerHTML += card;
     });
-
-    // hiding the loading screen
-    loadingScreen.style.display = "none";
 }
 
 // gets the url of the image of the post
